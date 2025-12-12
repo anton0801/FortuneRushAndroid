@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fortune_rush_loading_graph.xml"
+    app:startDestination="@id/fortuneRushLoadingFragment">
+
+    <fragment
+        android:id="@+id/fortuneRushLoadingFragment"
+        android:name="com.appslocraapp.slotscrashapp.ui.ie.presentation.FortuneRushLoadingFragment"
+        android:label="FortuneRushLoadingFragment" >
+        <action
+            android:id="@+id/action_fortuneRushLoadingFragment_to_fortuneRushV"
+            app:destination="@id/fortuneRushV" />
+    </fragment>
+    <fragment
+        android:id="@+id/fortuneRushV"
+        android:name="com.appslocraapp.slotscrashapp.ui.ie.presentation.util.FortuneRushV"
+        android:label="FortuneRushV" />
+</navigation>

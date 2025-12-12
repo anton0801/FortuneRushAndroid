@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/crash_game_bg"
+    tools:context=".ui.presentation.crash_game.CrashGame">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/slot_back_field"
+        android:layout_width="@dimen/_480sdp"
+        android:layout_height="@dimen/_260sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/crash_game_slot_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/app_bar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_bar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bottom_bar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_bar"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/home_btn"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:src="@drawable/crash_game_home_btn"
+        app:layout_constraintBottom_toBottomOf="@id/app_bar_bg"
+        app:layout_constraintEnd_toStartOf="@id/balance_wrapper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/app_bar_bg"
+        app:srcCompat="@drawable/slot_1_home_btn" />
+
+    <FrameLayout
+        android:id="@+id/balance_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/app_bar_bg"
+        app:layout_constraintEnd_toStartOf="@id/win_bg"
+        app:layout_constraintStart_toEndOf="@id/home_btn"
+        app:layout_constraintTop_toTopOf="@id/app_bar_bg">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/balance_bg"
+            app:srcCompat="@drawable/balance_bg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/comic_sans_ms"
+            android:text="0"
+            android:textColor="@color/white"
+            app:fontFamily="@font/comic_sans_ms"
+            tools:text="1000.00" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/win_bg"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:background="@drawable/black_corners"
+        app:layout_constraintBottom_toBottomOf="@id/app_bar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/app_bar_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/win_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="WIN"
+        android:textColor="#B4A464"
+        android:textSize="12sp"
+        app:fontFamily="@font/comic_sans_ms"
+        app:layout_constraintEnd_toEndOf="@id/win_bg"
+        app:layout_constraintStart_toStartOf="@id/win_bg"
+        app:layout_constraintTop_toTopOf="@id/win_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/win"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="0"
+        android:textColor="#D2D4D6"
+        android:textSize="18sp"
+        app:fontFamily="@font/comic_sans_ms"
+        app:layout_constraintEnd_toEndOf="@id/win_bg"
+        app:layout_constraintStart_toStartOf="@id/win_bg"
+        app:layout_constraintTop_toBottomOf="@id/win_label" />
+
+    <FrameLayout
+        android:id="@+id/stars_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/app_bar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/win_bg"
+        app:layout_constraintTop_toTopOf="@id/app_bar_bg">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/star_progress_bg"
+            app:srcCompat="@drawable/star_progress_bg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="18dp"
+            android:fontFamily="@font/comic_sans_ms"
+            android:text="0.0%"
+            android:textColor="@color/white"
+            app:fontFamily="@font/comic_sans_ms"
+            tools:text="0.0%" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bet_minus"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/minus_bet"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar_bg" />
+
+    <View
+        android:id="@+id/total_bet_bg"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:background="@drawable/black_corners"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_bg"
+        app:layout_constraintStart_toEndOf="@id/bet_minus"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/total_bet_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="TOTAL BET"
+        android:textColor="#B4A464"
+        android:textSize="12sp"
+        app:fontFamily="@font/comic_sans_ms"
+        app:layout_constraintEnd_toEndOf="@id/total_bet_bg"
+        app:layout_constraintStart_toStartOf="@id/total_bet_bg"
+        app:layout_constraintTop_toTopOf="@id/total_bet_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/total_bet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="0"
+        android:textColor="#D2D4D6"
+        android:textSize="18sp"
+        app:fontFamily="@font/comic_sans_ms"
+        app:layout_constraintEnd_toEndOf="@id/total_bet_bg"
+        app:layout_constraintStart_toStartOf="@id/total_bet_bg"
+        app:layout_constraintTop_toBottomOf="@id/total_bet_label" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bet_plus"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:src="@drawable/plus_bet"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_bg"
+        app:layout_constraintStart_toEndOf="@id/total_bet_bg"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/win_for_spin_bg"
+        android:layout_width="230dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/latest_winings_bg"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_bg"
+        app:layout_constraintEnd_toEndOf="@id/bottom_bar_bg"
+        app:layout_constraintStart_toStartOf="@id/bottom_bar_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/win_for_spin_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="LATEST WINNINGS"
+        android:textColor="#B4A464"
+        android:textSize="16sp"
+        app:fontFamily="@font/comic_sans_ms"
+        app:layout_constraintEnd_toEndOf="@id/win_for_spin_bg"
+        app:layout_constraintStart_toStartOf="@id/win_for_spin_bg"
+        app:layout_constraintTop_toTopOf="@id/win_for_spin_bg"
+        app:layout_goneMarginTop="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/latest_winnings_rv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/win_for_spin_bg"
+        app:layout_constraintStart_toStartOf="@id/win_for_spin_bg"
+        app:layout_constraintTop_toBottomOf="@id/win_for_spin_label"
+        tools:listitem="@layout/latest_win_item" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/max_bet"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/max_bet"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_bg"
+        app:layout_constraintEnd_toStartOf="@id/spin_btn"
+        app:layout_constraintStart_toEndOf="@id/win_for_spin_bg"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/spin_btn"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:src="@drawable/start_btn"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/max_bet"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar_bg"
+        app:srcCompat="@drawable/slot_1_spin_btn" />
+
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/crash_game_field"-->
+<!--        android:layout_width="@dimen/_410sdp"-->
+<!--        android:layout_height="@dimen/_170sdp"-->
+<!--        android:src="@drawable/crash_field"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="1.00 X"-->
+<!--        android:fontFamily="@font/comic_sans_ms"-->
+<!--        app:fontFamily="@font/comic_sans_ms"-->
+<!--        app:layout_constraintVertical_bias="0.35"-->
+<!--        android:textSize="32sp"-->
+<!--        android:textColor="@color/title_color"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game_wrapper"
+        android:layout_width="@dimen/_410sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_24sdp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/crash_field" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/flewaway"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:fontFamily="@font/comic_sans_ms"
+            android:text="@string/flew_away"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/_20ssp"
+            android:visibility="gone"
+            app:fontFamily="@font/comic_sans_ms"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/plane"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/crash_pers"
+            android:translationX="@dimen/_10sdp"
+            android:translationY="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/coefficient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comic_sans_ms"
+            android:includeFontPadding="false"
+            android:text="1.0x"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/_42ssp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:fontFamily="@font/comic_sans_ms"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

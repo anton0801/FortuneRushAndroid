@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:text="1.5x"
+    android:fontFamily="@font/comic_sans_ms"
+    app:fontFamily="@font/comic_sans_ms"
+    android:textColor="@color/white"
+    android:gravity="center"
+    android:layout_marginEnd="@dimen/_6sdp"
+    android:background="@drawable/latest_win_1">
+
+</androidx.appcompat.widget.AppCompatTextView>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "603997890100",
+    "project_id": "fortunerush-29c96",
+    "storage_bucket": "fortunerush-29c96.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603997890100:android:17db2ba89b58abe1260c61",
+        "android_client_info": {
+          "package_name": "com.appslocraapp.slotscrashapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnMznEgWmogT2Oz1lM4p3h_4NI2mTe_9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
