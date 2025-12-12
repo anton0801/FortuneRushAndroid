@@ -153,7 +153,7 @@ class MainApplication : Application() {
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@MainApplication)
-            KoinApplication.modules(
+            modules(
                 listOf(
                     feedMixModule
                 )
@@ -270,30 +270,30 @@ private const val FEED_MIX_APPSFLYER_DEV = "ZXSmKKurzrCDdVdVCP9N4R"
 private const val FEED_MIX_LIN = "com.appslocraapp.slotscrashapp"
 
 val feedMixModule = module {
-    Module.factory {
+    factory {
         FortuneRushNotificationsPushHandler()
     }
-    Module.single {
+    single {
         FortuneRushRepositoryImpl()
     }
-    Module.single {
-        FortuneRushLocalStorageManager(Scope.get())
+    single {
+        FortuneRushLocalStorageManager(get())
     }
-    Module.factory {
+    factory {
         FortuneRushPushTokenUseCase()
     }
-    Module.factory {
-        FortuneRushChSystemServiceI(Scope.get())
+    factory {
+        FortuneRushChSystemServiceI(get())
     }
-    Module.factory {
+    factory {
         FortuneRushGetAllUseCaseInApp(
-            Scope.get(), Scope.get(), Scope.get()
+            get(), get(), get()
         )
     }
-    Module.factory {
-        ForrrttRushhhhhViFun(Scope.get())
+    factory {
+        ForrrttRushhhhhViFun(get())
     }
     viewModel {
-        FortRushhhLoadViewModel(Scope.get(), Scope.get(), Scope.get())
+        FortRushhhLoadViewModel(get(), get(), get())
     }
 }
