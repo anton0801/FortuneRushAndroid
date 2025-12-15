@@ -20,23 +20,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//    signingConfigs {
-//        create("release") {
-//            val isCI = "true".equals(System.getenv("CI"))
-//
-//            if (isCI) {
-//                val keystorePath = System.getenv("CM_KEYSTORE_PATH")
-//                if (!keystorePath) {
-//                    throw new GradleException("CM_KEYSTORE_PATH is not set in CI!")
-//                }
-//
-//                storeFile file(keystorePath)
-//                storePassword = System.getenv("CM_KEYSTORE_PASSWORD")
-//                keyAlias = System.getenv("CM_KEY_ALIAS")
-//                keyPassword = System.getenv("CM_KEY_PASSWORD")
-//            }
-//        }
-//    }
 
     signingConfigs {
         create("release") {
