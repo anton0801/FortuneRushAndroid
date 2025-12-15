@@ -721,6 +721,22 @@
                 app:layout_constraintTop_toTopOf="@id/settings_data_bg" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/comic_sans_ms"
+                android:text="Privacy Policy"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:fontFamily="@font/comic_sans_ms"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="@id/settings_data_bg"
+                app:layout_constraintTop_toTopOf="@id/game_settings_title"
+                app:layout_constraintBottom_toBottomOf="@id/game_settings_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sound_effects_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

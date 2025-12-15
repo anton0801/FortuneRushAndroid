@@ -3,7 +3,7 @@ package com.appslocraapp.slotscrashapp.ui.ie.domain
 import com.google.gson.annotations.SerializedName
 
 private const val FEED_MIX_A = "com.appslocraapp.slotscrashapp"
-private const val FEED_MIX_B = ""
+private const val FEED_MIX_B = "fortunerush-29c96"
 
 
 data class FortuneRushParam (

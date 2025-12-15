@@ -157,6 +157,10 @@ class MenuFragment : Fragment() {
             binding.settingsLl.isVisible = false
         }
 
+        binding.privacyPolicy.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://fortunerushcasino.com/privacy-policy.html")))
+        }
+
         binding.soundsToggle.setOnClickListener {
             if (prefs.getBoolean("sounds", false)) {
                 prefs.edit().putBoolean("sounds", false).apply()

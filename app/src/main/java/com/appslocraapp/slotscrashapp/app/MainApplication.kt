@@ -202,7 +202,7 @@ class MainApplication : Application() {
             FeedMixAppsFlyerState.FeedMixDefault
         )
         var FEED_MIX_FB_LI: String? = null
-        const val FORTUNE_MAIN_TAG = "FEEDMIX_MainTag"
+        const val FORTUNE_MAIN_TAG = "FORTUNE_RUSH_TAG_APP"
     }
 
     private fun feedMixGetApiMethodsForAppsflyer(

@@ -1,6 +1,7 @@
 package com.appslocraapp.slotscrashapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
@@ -10,10 +11,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
+import androidx.lifecycle.lifecycleScope
 import com.appslocraapp.slotscrashapp.app.MainApplication
 import com.appslocraapp.slotscrashapp.ui.ie.handler.FortuneRushGlobalLayoutUtils
 import com.appslocraapp.slotscrashapp.ui.ie.handler.FortuneRushNotificationsPushHandler
 import com.appslocraapp.slotscrashapp.ui.ie.handler.FortuneRushSetupSystemBars
+import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.inject
 import kotlin.getValue
 
@@ -79,6 +85,16 @@ class StartActivity : AppCompatActivity() {
         }
         feedMixPushHandler.feedMixAppHandlePush(intent.extras)
 
+        lifecycleScope.launch {
+            feedMixRetriveDeviceGaid()
+        }
+    }
+
+    suspend fun feedMixRetriveDeviceGaid(): String = withContext(Dispatchers.IO) {
+        val gaid = AdvertisingIdClient.getAdvertisingIdInfo(this@StartActivity).id
+            ?: "00000000-0000-0000-0000-000000000000"
+        Log.d(MainApplication.FORTUNE_MAIN_TAG, "Gaid: $gaid")
+        return@withContext gaid
     }
 
     override fun onResume() {
